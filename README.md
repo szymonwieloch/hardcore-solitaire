@@ -1,6 +1,6 @@
+![Hardcore Solitaire logo](./hsolitaire/media/images/logo.png)
 # hardcore-solitaire
-A very demanding version of a solitaire game.
-
+A very demanding version of a solitaire game. 
 This is one of my old projects that I decided to publish.
 It is one of the most difficult yet satisfying solitaire games.
 To win the game you don't need any luck - you just need to be able to think several moves in advance.
