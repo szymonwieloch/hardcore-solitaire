@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Load game</h1>
+{% if games %}
+<table id="loadgametable" >
+<tr>
+	<th>Name</th>
+	<th>Created</th>
+	<th>Modified</th>
+	<th>Give up</th>
+</tr>
+{% for game in games %}
+
+<tr>
+<td class="table-link" ><a href="{% url 'game' game.id %}">{{game.name}}</a></td>
+<td class="table-link" ><a class="game-link" href="{% url 'game' game.id %}">{{game.created}}</a></td>
+<td class="table-link" ><a href="{% url 'game' game.id %}">{{game.modified}}</a></td>
+<td><a href="{% url 'delete' game.id %}" onclick="return confirm('Are you sure the you want to give up the game?')" >Give up</a></td>
+</tr>
+
+{% endfor %}
+</table>
+{% else %}
+<h2> No games found </h2>
+{% endif %}
+{% endblock %}

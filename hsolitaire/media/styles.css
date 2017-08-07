@@ -1,0 +1,236 @@
+html, body {
+	font: 0.9em 'Trebuchet MS', Arial, Helvetica, Verdana, sans-serif;
+	margin:0px;
+	background-color: #9fee00; /* for resizing footer*/
+	background-image: url('images/board.jpg');
+}
+
+a {
+	color: #F00;
+}
+
+/*menu*/
+#menu {
+
+}
+
+.menubutton{
+	float: left;
+	display:block;
+	margin: 5px;
+	margin-right: 0px;
+	background-color: #FFF;
+	color: #000;
+	font-weight: bold;
+	text-decoration: none;
+	position: relative;
+	line-height: 40px;
+	padding: 0px 10px;
+}
+
+.menubutton:hover{
+	background-color: #F00;
+	color: #FFF;
+}
+
+.menulist{
+	display: none;
+	line-height: normal;
+}
+
+.menubutton:hover .menulist {
+	min-width: 200px;
+	display: block;
+	position: absolute;
+	left: 0px;
+	background-color: white;
+	z-index: 100;
+	border: 1px solid black;
+}
+
+.menusubbutton{
+	display: block;
+	padding: 5px;
+	text-decoration: none;
+	color: black;
+	cursor: hand; 
+	cursor: pointer;
+}
+
+.menusubbutton:hover{
+	background-color: #F00;
+	color: #FFF;
+
+}
+#login{
+	float: right;
+	line-height: 50px;
+	margin: 0px 5px; 
+	color: #FFF;
+	font-weight: bold;
+}
+
+#topbar{
+	background-color: #2d2d2d;	
+	position: fixed;
+	width: 100%;
+	height: 50px;
+	z-index: 200;
+}
+
+#toppadding{
+	height: 50px;
+}
+
+#logo{
+	
+	float:left;
+	height: 40px;
+	margin: 5px;
+	
+}
+/*content*/
+
+#content {
+	padding: 10px;
+	width: 1000px;
+	margin: 10px auto;
+	min-height: 800px;
+	background-color: #FFF;
+	border: 1px solid #000;
+}
+
+#board {
+	/*background-color: #9fee00; */
+	width: 1000px;
+	margin: 0px auto;
+	clear: both;
+}
+
+#left{
+	width: 439px;
+	
+	float:left;
+}
+
+#center{
+	float:left;
+}
+
+#left, #right{
+	margin: 0px 10px;
+}
+
+#right{
+	width: 438px;
+	float:right;
+	
+}
+
+.stack{
+	position:relative;
+	margin: 10px 0px;
+	background-color: rgba(0, 0, 0, 0.3);
+	height: 107px;
+	
+}
+
+.card{
+	position: absolute;
+	margin:0px;
+	padding: 0px;
+}
+
+
+.centralstack {
+	width: 82px;
+}
+
+.hoveredstack{
+	background-color: rgba(255, 0, 0, 0.5);
+}
+
+#save{
+	float: left;
+	margin: 5px 5px 5px 15px;
+	height: 40px;
+}
+#save img{
+	height: 40px;
+	display: block;
+}
+
+#msgbox{
+	width: 300px;
+	height: 40px;
+	float: left;
+	margin: 5px;
+	margin-left: 15px;
+	background-color: #FFF;
+}
+
+#msgbox img{
+	height: 30px;
+	margin: 4px;
+	float: left;
+	display: block;
+}
+#msgboxtext{
+    max-width: 262px;
+	float: left;
+	line-height: 38px;
+}
+
+td input {
+	border: 1px #000 solid
+}
+
+table{
+	border-collapse: collapse;
+}
+
+th{
+    vertical-align:bottom;
+}
+td{
+    
+}
+.errorlist {
+    color: #F00;
+}
+
+#loadgametable{
+	width: 100%;
+    text-align: center;
+}
+
+#loadgametable td{
+	padding: 0px;
+    
+}
+
+#loadgametable .table-link a{
+	display: block;
+	width: 100%;
+	text-decoration: none;
+	text-align: center;
+	color: #000;
+}
+
+#loadgametable tr:hover .table-link a{
+background-color: #F00;
+    color: #FFF;
+}
+
+.button{
+	background-color: #F00;
+	color: #FFF;
+	font-weight: bold;
+	padding: 5px;
+    border: none;
+    cursor:pointer;cursor:hand;
+}
+
+#footer {
+	padding: 5px;
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>Hardcore Solitaire</title>
+<link rel="stylesheet" type="text/css" href="{% url 'media' 'styles.css' %}" media="screen" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+<script type="text/javascript" src="{% url 'media' 'game.js' %}"></script>
+<script type="text/javascript" src="{% url 'media' 'script.js' %}"></script>
+</head>
+<body>
+<div id="topbar" >
+	<img src="{% url 'media' 'images/logo2.png'%}" alt="Logo" id="logo" />
+	
+	<div id = "menu">
+	
+		
+			<a class="menubutton" href="{%url 'home'%}">Home</a>
+			<div class="menubutton">
+				Game
+				<div class="menulist">
+                    <a class="menusubbutton" href="{%url 'newquick'%}">New quick game</a>
+					<a class="menusubbutton" href="{%url 'continue'%}">Continue last game</a>
+					<a class="menusubbutton" href="{%url 'newgame'%}">New random game</a>
+                    <a class="menusubbutton" href="{%url 'newwinnable'%}">New winnable game</a>
+					<a class="menusubbutton" href="{%url 'load'%}">Load game</a>
+					{% if game_id >= 0 %} 
+					<a class="menusubbutton" onclick="return confirm('Are you sure the you want to give up the game?')" href="{%url 'giveup' game_id%}">Give up</a>
+					{% endif %}
+				</div>
+			</div>
+			{% block savegame %}{% endblock %}
+			<div class="menubutton" >
+				Help
+				<div class="menulist">
+					<a class="menusubbutton" href="{%url 'rules'%}">Rules of the game</a>
+					<a class="menusubbutton" href="{%url 'interface'%}">Interface</a>
+					<a class="menusubbutton" href="http://code.google.com/p/hardcore-solitaire/">Project page</a>
+					<a class="menusubbutton" href="{%url 'about'%}">About</a>
+				</div>
+			</div>
+	</div>
+	
+	<div id="save">
+		<img src="{% url 'media' 'images/savedisabled.png' %}" alt="Save disabled" id="savedisabledicon" />
+		<img src="{% url 'media' 'images/save.png' %}" alt="Save" id="saveicon" style="display:none" onclick="saveGame()"/>
+	</div>
+	
+	<div id="msgbox">
+		<img src="{% url 'media' 'images/info.png' %}" alt="info" id="infoicon" />
+		<img src="{% url 'media' 'images/warning.png' %}" alt="info" id="warningicon" style="display:none" />
+		<img src="{% url 'media' 'images/error.png' %}" alt="info" id="erroricon" style="display:none" />
+		<img src="{% url 'media' 'images/success.png' %}" alt="info" id="successicon" style="display:none" />
+		<div id="msgboxtext"> Welcome to Hardcore Solitaire!</div>
+</div>
+
+	<div id="login" >
+	{% if user.username %}
+	{{ user.username }}, 
+	<a href="{%url 'logout'%}">logout</a>
+	{% else %}
+	Anonymous, 
+	<a href="{%url 'login' %}">login</a> or 
+	<a href="{%url 'register' %}">register</a>
+	{% endif %}
+	</div>
+	
+	<div style="clear:both"></div>
+</div>
+	<div id="toppadding" ></div>
+	{% block contentarea %}
+	<div div id="content" >
+	{% block content %}{% endblock %}
+	</div>
+	{% endblock %}
+<div id="footer" style="text-align:center; color: #FFF">
+		Szymon Wieloch 2012-2014. This is a free software under MIT license.
+</div>
+</body>
+</html>

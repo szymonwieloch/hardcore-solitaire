@@ -1,0 +1,38 @@
+﻿{% extends "base.html" %}
+{% block content %}
+
+<h1> Game rules</h1>
+<h2>The object</h2>
+<p>
+	The object of the game is building four stacks of cards, one for each suit, in ascending order, from ace to king.
+</p>
+<h2>Starting position</h2>
+<p>
+	Hardcore Solitaire is played with a single deck of 52 cards.
+	Four home stacks are positioned in the center.
+	Each home stack starts with an ace.
+	This is where you build the piles needed to win.
+	Other stacks are positioned around them.
+	The game begins with all cards arranged into 10 stacks. 
+</p>
+
+<h2>Moves</h2>
+<p>
+	You can't move cards between columns at random. 
+	You are limited to moving single cards.
+	A card can be placed either on an empty stack or on another card with the same suit and with descending order (central stacks are the oposite).
+	So you can place a 10♠ on a J♠ , but neither on a 3♠ nor on a J♥.
+	The only exception to this rule is the central stack at the bottom of the board.
+	You place there one and only one cards.
+</p>
+
+<h2>Hints and tricks</h2>
+<ul>
+	<li>If you can drag a card from a normal stack to a home stack, do it. Is is always a good idea.</li>
+	<li>Only about 40% or all random games can be won. It may be a good idea to start a winnable game (select related option in menu.</li>
+    <li>If you make a bad move the game may no longer be winnable. You can check game status using related option in menu. Then you can undo your last moves.</li>
+	<li>When you don't know what to do, try finding cards that can be moved to home stacks.</li>
+	<li>Having one additional empty stack really makes a life easier. Check if it possible to move cards in such a way, that you get one more empty stack.</li>
+</ul>
+
+{% endblock %}

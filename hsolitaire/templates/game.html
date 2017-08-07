@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block savegame %}
+    {% if game_id >= 0 %} 
+	<div class="menubutton">
+		Save as
+			<form id="gamename" class="menulist" method="post" action="./savename/">
+			{% csrf_token %}
+			<div>{{ form.name.label_tag }} </div>
+			<div id="savename">{{ form.name }}</div>
+			<div><input class="button" onclick="return saveName();" type="submit" value="Save" /></div>
+			<input type="hidden" name="next" value="." />
+			</form>
+	</div>
+    {% endif %}
+	
+	<div class="menubutton">
+		Moves
+			<div class="menulist">
+				<span class="menusubbutton" onclick="applyObvious()" >Apply obvious moves</span>
+				<span class="menusubbutton" onclick="undo()" >Undo last move</span>
+				<span class="menusubbutton" onclick="undo5()" >Undo last 5 moves</span>
+				<span class="menusubbutton" onclick="checkWinning()" >Is game winnable?</span>
+			</div>
+	</div>
+{% endblock %}
+
+{% block contentarea %}
+
+<script type="text/javascript">
+    var WIN_URL = "{% if game_id >= 0 %}{%else%}{% url 'win'%}{% endif %}"
+	var game_history = new History({{history|safe}});
+    {% if game_id >= 0 %}
+	setInterval(function(){
+		saveGame();
+	}, 30000);
+    {% endif %}
+</script>
+
+<div id="audio" >
+	<audio preload="auto" autoplay="autoplay" id="shufflesound" >
+		<source src="{% url 'media' 'sounds/shuffle.wav'%}" type="audio/wav" />
+		<source src="{% url 'media' 'sounds/shuffle.mp3'%}" type="audio/mpeg" />
+	</audio>
+	<audio preload="auto" id="movesound" >
+		<source src="{% url 'media' 'sounds/move.wav'%}" type="audio/wav" />
+		<source src="{% url 'media' 'sounds/move.mp3'%}" type="audio/mpeg" />
+	</audio>
+	<audio preload="auto" id="errorsound">
+		<source src="{% url 'media' 'sounds/error.wav'%}" type="audio/wav" />
+		<source src="{% url 'media' 'sounds/error.mp3'%}" type="audio/mpeg" />
+	</audio>
+	<audio preload="auto" id="warningsound">
+		<source src="{% url 'media' 'sounds/warning.wav'%}" type="audio/wav" />
+		<source src="{% url 'media' 'sounds/warning.mp3'%}" type="audio/mpeg" />
+	</audio>
+</div>
+
+<div id="board">
+{% include "board.html"%}
+</div>
+
+
+{% endblock %}

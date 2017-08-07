@@ -1,0 +1,5 @@
+<div class="stack normalstack {%if stack.reversed%}rightstack{%else%}leftstack{%endif%}" id="{{stack.symbol}}">
+{% for card in stack.cards %}
+{% include "card.html" %}
+{% endfor %}
+</div>

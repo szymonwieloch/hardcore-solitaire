@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1> About </h1>
+<h2>License</h2>
+<p>
+	Hardcore Solitaire is a free game developed under MIT license. 
+	For more information please visit:
+</p>
+<p>
+	<a href="http://www.gnu.org/licenses/gpl-3.0.html" >http://www.gnu.org/licenses/gpl-3.0.html</a>
+</p>
+<h2>Technologies</h2>
+<p>
+	Hardcore Solitaire was built using HTML, Django, jQuery and jQueryUi. 
+	You can download the source code for free from project page: 
+</p>
+<p>
+	<a href="http://code.google.com/p/hardcore-solitaire/">http://code.google.com/p/hardcore-solitaire/</a>.
+</p>
+<h2>Author</h1>
+<p>
+	The author of this game is Szymon Wieloch.
+</p>
+	<img src="{% url 'media' 'images/simon.jpg'%}" alt="Szymon Wieloch" style="display:block;"/>
+<p>
+	You can visit my home page (unfortunately in Polish):
+</p>
+<p>
+	<a href="http://szymonwieloch.pl">szymonwieloch.pl</a>
+</p>
+<p>
+	or send me an email:
+</p>
+
+<p>
+	<script type="text/javascript">
+		// <![CDATA[
+		var user = 'szymon.wieloch';
+		var domain = 'gmail.com';
+		var additional = '?subject=Hardcore Solitaire';
+		document.write('<a hr' + 'ef="mai' + 'lto:' + user + '\x40' + domain + additional + '">');
+		document.write(user + '\x40' + domain + '<'+'/a>');
+		// ]]>
+	</script>
+</p>
+	
+
+
+{% endblock %}

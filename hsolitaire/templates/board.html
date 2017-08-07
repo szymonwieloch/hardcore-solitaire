@@ -1,0 +1,19 @@
+<div id ="left">
+{% for stack in left %}
+{% include "normalstack.html" with stack=stack %}
+{% endfor %}
+</div>
+
+<div id="center">
+{% for stack in central %}
+{% include "centralstack.html" with stack=stack %}
+{% endfor %}
+</div>
+
+<div id="right">
+{% for stack in right %}
+{% include "normalstack.html" with stack=stack %}
+{% endfor %}
+</div>
+
+<div style="clear:both"></div>

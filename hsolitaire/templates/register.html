@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Register</h1>
+<form method="post" action=".">
+{% csrf_token %}
+<table>
+{{ form.as_table }}
+</table>
+<input class="button" type="submit" value="Register" />
+</form>
+
+<p>
+	If you already have an account, you can <a href="{%url 'login' %}">login</a>.
+</p>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Interface</h1>
+
+<h2>Menu</h2>
+	<h3>Game</h3>
+	<p>
+		This menu allows you to operate on your games. 
+		It allows you to create a new game, load a past one or to cotinue the game that you played the last time.
+        <ul>
+            <li><strong>New quick game</strong> - the only option to play Hardcore Solitaire witout registering and loggin in. It creates winnable game that is not saved.</li>
+            <li><strong>Continue last game</strong> - load and starts the most recently saved game or creates a new one if there are no saved games in the database.</li>
+            <li><strong>New random game</strong> - creates a new game that is fully random. Only about 40% of random games are winnable.</li>
+            <li><strong>New winnable game</strong> - creates a new that is winnable. Hardcore Solitaire ccomes with around 10 000 sets of cards that are known to be winnable and randomly chooses one for you.</li>
+            <li><strong>Load game</strong> - allows you to load previously played game. Hardcore Solitaire automaticaly saves your games every 30 seconds, so you will find all your not finished games here.</li>
+        </ul>
+	</p>
+	<h3>Save game</h3>
+	<p>
+		Games are automaticaly saved in Hardcore Solitaire, but you may want to change the default game name.
+		If yes, then simply use this menu.
+	</p>
+	
+	<h3>Moves</h3>
+	<p>
+		This menu allows you to control the flow of the current game.
+	</p>
+        <ul>
+            <li><strong>Apply obvious moves</strong> - checks if there are obious moves and applies them all. Very useful at the end of game when otherwise you would have to manually collect all cards.</li>
+            <li><strong>Undo last move, undo 5 moves</strong> - these commands undo your last moves. History of all your moves is saved in the database together with your game, so you are always able to bring the gaem back to the start.</li>
+            <li><strong>Is game winnable?</strong> - if you make a bad move then the game may no longer be winnable. To check this simply use this menu.</li>
+
+        </ul>
+	<h3>Help</h3>
+	<p>
+		This is where you should go if you need some help or you would like to get more information about the game.
+	</p>
+<h2>Gameplay</h2>
+	<p>
+		You can simply drag and drop cards to move them from one stack to the another.
+		Game is automaticaly saved every 30 seconds. 
+		To save a game you need to have an internet connection.
+		After each move you get information about succes (or failure) in the long thick box just above the boards.
+		This message bos will also inform you about any possible problems.
+	<p>
+
+{% endblock %}

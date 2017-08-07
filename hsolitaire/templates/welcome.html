@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+
+<img src="{% url 'media' 'images/logo.png'%}" alt="Logo" style="float: left; margin: 10px;" />
+<h1>Welcome to Hardcore Solitaire!</h1>
+
+<p>
+	Hardcore Solitaire is a free card game. 
+	Rules are easy to understand, but the game is actually very difficult.
+	It is just perfect if you feel lack of real intelectual stimulation in your life.
+	Hardcore Solitaire requires planning at least several moves since one mistake can make you loose the game.
+</p>
+<p>
+	I have created this game as a practice and a element of my portfolio.
+	You can play it for <strong>free</strong>.
+	Only <a href="{%url 'register' %}">registration</a> is required since the application saves state of your games in a database.
+	I will be thankfull for any kind of feedback on this game.
+</p>
+
+<a href="{% url 'newquick' %}" style="display:block; background-color:#F00; color: #FFF; font-weight: bold; float:left; padding: 10px; font-size:200%; text-decoration: none">
+    Play quick game!
+</a>
+<div style="text-align: right">
+<p>
+	I wish you luck. You will need it ;-).
+</p>
+
+<p>
+	Simon
+</p>
+</div>
+
+<div style="clear: both; margin: 10px"></div>
+
+
+
+
+<img src="{% url 'media' 'images/gameplay.jpg'%}" alt="Gameplay" style="display:block; margin: 0px auto"/>
+
+<p style="text-align: center; font-style:italic; font-size: 80%">
+	Gameplay of Hardcore Solitaire.
+</p>
+
+{% endblock %}
